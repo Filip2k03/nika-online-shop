@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Soundwind - Checkout</title>
+<style>
+/* Root Colors */
+:root {
+--primary-color: #00bcd4;
+--secondary-color: #4caf50;
+--text-color: #333;
+--background-color: #f5f5f5;
+}
+
+/* General Styles */
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: var(--background-color);
+color: var(--text-color);
+display: flex;
+}
+
+.sidebar {
+background-color: var(--primary-color);
+color: #fff;
+padding: 20px;
+width: 200px;
+height: 100vh;
+position: fixed;
+}
+
+.sidebar a {
+display: block;
+color: #fff;
+text-decoration: none;
+padding: 10px;
+}
+
+.sidebar a:hover {
+background-color: rgba(255, 255, 255, 0.2);
+}
+
+.container {
+margin-left: 220px; /* Leave space for sidebar */
+padding: 20px;
+max-width: 800px;
+}
+
+h1 {
+color: var(--primary-color);
+}
+
+form {
+display: flex;
+flex-direction: column;
+}
+
+label {
+margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="address"] {
+padding: 10px;
+margin-top: 5px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+button {
+margin-top: 20px;
+padding: 10px;
+background-color: var(--secondary-color);
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+button:hover {
+background-color: #388e3c;
+}
+</style>
+</head>
+<body>
+<div class="sidebar">
+<h2>Nika</h2>
+<a href="index.html">Home</a>
+<a href="clothes.html">Clothes</a>
+<a href="shoes.html">Shoes</a>
+<a href="about.html">About Us</a>
+</div>
+
+<div class="container">
+<h1>Checkout</h1>
+<form id="checkout-form">
+<label for="full-name">Full Name:</label>
+<input type="text" id="full-name" name="full-name" required />
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required />
+
+<label for="phone">Phone Number:</label>
+<input type="tel" id="phone" name="phone" required />
+
+<label for="address">Shipping Address:</label>
+<input type="text" id="address" name="address" required />
+
+<button type="submit">Complete Purchase</button>
+</form>
+</div>
+
+<script>
+document.getElementById('checkout-form').onsubmit = function(event) {
+event.preventDefault();
+alert('Thank you for your purchase!');
+// Here you can implement further actions like sending the data to a server
+};
+</script>
+</body>
+</html>

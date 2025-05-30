@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Shopping Cart</title>
+<style>
+/* Root Colors */
+:root {
+--primary-color: #00bcd4;
+--secondary-color: #4caf50;
+--text-color: #333;
+--background-color: #f5f5f5;
+}
+
+/* General Styles */
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: var(--background-color);
+color: var(--text-color);
+}
+
+.container {
+max-width: 800px;
+margin: 20px auto;
+padding: 20px;
+background: white;
+border-radius: 5px;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+color: var(--primary-color);
+}
+
+.cart-item {
+display: flex;
+justify-content: space-between;
+padding: 10px;
+border-bottom: 1px solid #ccc;
+}
+
+.cart-item img {
+width: 50px;
+height: auto;
+}
+
+.item-details {
+flex: 1;
+margin-left: 10px;
+}
+
+.item-title {
+font-size: 18px;
+font-weight: bold;
+}
+
+.item-price {
+color: var(--secondary-color);
+}
+
+.total {
+font-weight: bold;
+margin-top: 20px;
+}
+
+button {
+padding: 5px 10px;
+margin-left: 10px;
+background-color: var(--secondary-color);
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+button:hover {
+background-color: #388e3c;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Shopping Cart</h1>
+<div id="cart-items"></div>
+<div class="total" id="total-price">Total: $0.00</div>
+</div>
+
+<script>
+// Sample cart items
+const cartItems = [
+{
+  title: "Stylish Shirt",
+  price: 29.99,
+  image: "https://via.placeholder.com/50?text=Shirt",
+  quantity: 1
+},
+{
+  title: "Nike Air Max",
+  price: 120.00,
+  image: "https://via.placeholder.com/50?text=Nike+Air+Max",
+  quantity: 1
+}
+];
+
+function displayCartItems() {
+const cartContainer = document.getElementById('cart-items');
+cartContainer.innerHTML = ''; // Clear existing items
+let total = 0;
+
+cartItems.forEach((item, index) => {
+  total += item.price * item.quantity; // Calculate total price
+
+  const cartItem = document.createElement('div');
+  cartItem.className = 'cart-item';
+  cartItem.innerHTML = `
+    <img src="${item.image}" alt="${item.title}" />
+    <div class="item-details">
+      <div class="item-title">${item.title}</div>
+      <div class="item-price">$${item.price.toFixed(2)}</div>
+      <div>Qty: ${item.quantity}</div>
+    </div>
+    <button onclick="removeItem(${index})">Remove</button>
+  `;
+  cartContainer.appendChild(cartItem);
+});
+
+document.getElementById('total-price').innerText = `Total: $${total.toFixed(2)}`;
+}
+
+function removeItem(index) {
+cartItems.splice(index, 1); // Remove item from cart
+displayCartItems(); // Update cart display
+}
+
+// Initial display of cart items
+displayCartItems();
+</script>
+</body>
+</html>
+
+

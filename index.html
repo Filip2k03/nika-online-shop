@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Soundwind - Home</title>
+<style>
+  /* Root Colors */
+  :root {
+    --primary-color: #00bcd4;
+    --secondary-color: #4caf50;
+    --text-color: #333;
+    --background-color: #f5f5f5;
+  }
+
+  /* General Styles */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    
+  }
+
+  .header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .sidebar {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 20px;
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+  }
+
+  .sidebar a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+  }
+
+  .sidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .container {
+    margin-left: 220px; /* Leave space for sidebar */
+    padding: 20px;
+    max-width: 1200px;
+  }
+
+  .featured-products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  .product-card {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    flex: 1 1 calc(25% - 20px);
+    min-width: 220px;
+  }
+
+  .product-card img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .product-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .product-price {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    color: white;
+    transition: background-color 0.3s;
+  }
+
+  .btn:hover {
+    background-color: #388e3c;
+  }
+
+  .promo-banner {
+    background-color: #ffeb3b;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+</style>
+</head>
+<body>
+<div class="sidebar">
+  <h2>Nika</h2>
+  <a href="index.html">Home</a>
+  <a href="catalog.html">Catalog</a>
+  <a href="clothes.html">Clothes</a>
+  <a href="shoes.html">Shoes</a>
+  
+  <a href="about.html">About Us</a>
+</div>
+
+<div class="header">
+  <h1>Welcome to Soundwind</h1>
+  <p>Your one-stop shop for high-quality audio products!</p>
+</div>
+
+<div class="promo-banner">
+  <h2>Special Offer: 20% off on all products!</h2>
+  <p>Use code: SOUND20 at checkout</p>
+</div>
+
+<div class="container">
+  <h2>Featured Products</h2>
+  <div class="featured-products">
+    <div class="product-card">
+      <img src="https://via.placeholder.com/150?text=Stylish+Shirt" alt="Stylish Shirt" />
+      <div class="product-title">Stylish Shirt</div>
+      <div class="product-price">$29.99</div>
+      <a href="clothes.html" class="btn">View Product</a>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/150?text=Nike+Air+Max" alt="Nike Air Max" />
+      <div class="product-title">Nike Air Max</div>
+      <div class="product-price">$120.00</div>
+      <a href="shoes.html" class="btn">View Product</a>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/150?text=Summer+Dress" alt="Summer Dress" />
+      <div class="product-title">Summer Dress</div>
+      <div class="product-price">$49.99</div>
+      <a href="clothes.html" class="btn">View Product</a>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/150?text=Adidas+Sneakers" alt="Adidas Sneakers" />
+      <div class="product-title">Adidas Sneakers</div>
+      <div class="product-price">$69.99</div>
+      <a href="shoes.html" class="btn">View Product</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
