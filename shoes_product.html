@@ -5,6 +5,240 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>nika - Nike Air Max</title>
 <link rel="stylesheet" href="style.css">
+<style>
+  /* Base styles (copy your current styles here) */
+:root {
+  --primary-color: #00bcd4;
+  --secondary-color: #4caf50;
+  --text-color: #333;
+  --background-color: #f5f5f5;
+  --footer-bg: #222;
+  --footer-text: #eee;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.header {
+  background: linear-gradient(90deg, var(--primary-color) 60%, var(--secondary-color) 100%);
+  color: white;
+  padding: 30px 20px 20px 220px;
+  text-align: left;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+.header h1 {
+  margin: 0 0 8px 0;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.header p {
+  margin: 0;
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+
+.sidebar {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 20px;
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.04);
+}
+
+.sidebar h2 {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.sidebar a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 10px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-size: 1.08rem;
+  transition: background 0.2s;
+}
+
+.sidebar a:hover, .sidebar a.active {
+  background-color: rgba(255, 255, 255, 0.18);
+  font-weight: bold;
+}
+
+.container {
+  margin-left: 220px;
+  padding: 20px;
+  max-width: 1200px;
+}
+
+.featured-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.product-card {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  flex: 1 1 calc(25% - 20px);
+  min-width: 220px;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.product-price {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: var(--secondary-color);
+  color: white;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: #388e3c;
+}
+
+.promo-banner {
+  background-color: #ffeb3b;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-left: 220px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.footer {
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  text-align: center;
+  padding: 25px 20px 20px 220px;
+  margin-top: 40px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.footer .footer-links {
+  margin-bottom: 10px;
+}
+.footer .footer-links a {
+  color: #b2ebf2;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.footer .footer-links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .container {
+    margin-left: 0;
+    padding: 15px;
+    max-width: 100%;
+  }
+  .header, .footer, .promo-banner {
+    padding-left: 0;
+    margin-left: 0;
+  }
+  .sidebar {
+    display: none;
+  }
+  .promo-banner {
+    margin-left: 0;
+  }
+  .featured-products {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+  .product-card {
+    flex: 1 1 100%;
+    min-width: 180px;
+    margin-bottom: 15px;
+  }
+  .featured-products {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .container {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 18px 8px 12px 8px;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 1.3rem;
+  }
+  .promo-banner {
+    font-size: 1rem;
+    padding: 10px 5px;
+  }
+  .product-card {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+  .footer {
+    padding: 15px 5px 10px 5px;
+    font-size: 0.9rem;
+  }
+}
+</style>
 <script>
 let cartCount = 0;
 function addToCart() {
