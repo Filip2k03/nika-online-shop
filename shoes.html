@@ -136,6 +136,10 @@
 <div class="header">
   <h1>Shoes Collection</h1>
   <p>Step up your style with our latest shoes!</p>
+  <div class="cart-icon" onclick="window.location.href='cart.html'">
+    🛒
+    <span class="cart-count" id="cart-count">0</span>
+  </div>
 </div>
 
 <div class="container">
@@ -177,5 +181,14 @@
   </div>
   &copy; 2025 Nika Online Shop. All rights reserved.
 </div>
+<script>
+let cartCount = 0;
+function addToCart(title, price) {
+  cartCount++;
+  document.getElementById('cart-count').innerText = cartCount;
+  // Optionally, store cart in localStorage or send to backend
+  // For demo, just update the icon
+}
+</script>
 </body>
 </html>
