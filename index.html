@@ -5,30 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>nika - Home</title>
 <style>
-  /* Root Colors */
   :root {
     --primary-color: #00bcd4;
     --secondary-color: #4caf50;
     --text-color: #333;
     --background-color: #f5f5f5;
+    --footer-bg: #222;
+    --footer-text: #eee;
   }
 
-  /* General Styles */
   body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
-    
   }
 
   .header {
-    background-color: var(--primary-color);
+    background: linear-gradient(90deg, var(--primary-color) 60%, var(--secondary-color) 100%);
     color: white;
-    padding: 20px;
-    text-align: center;
-    width: 100%;
+    padding: 30px 20px 20px 220px;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  }
+  .header h1 {
+    margin: 0 0 8px 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+  .header p {
+    margin: 0;
+    font-size: 1.2rem;
+    opacity: 0.95;
   }
 
   .sidebar {
@@ -38,21 +49,37 @@
     width: 200px;
     height: 100vh;
     position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.04);
+  }
+
+  .sidebar h2 {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-align: center;
   }
 
   .sidebar a {
     display: block;
     color: #fff;
     text-decoration: none;
-    padding: 10px;
+    padding: 12px 10px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    font-size: 1.08rem;
+    transition: background 0.2s;
   }
 
-  .sidebar a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+  .sidebar a:hover, .sidebar a.active {
+    background-color: rgba(255, 255, 255, 0.18);
+    font-weight: bold;
   }
 
   .container {
-    margin-left: 220px; /* Leave space for sidebar */
+    margin-left: 220px;
     padding: 20px;
     max-width: 1200px;
   }
@@ -99,6 +126,7 @@
     background-color: var(--secondary-color);
     color: white;
     transition: background-color 0.3s;
+    margin-top: 10px;
   }
 
   .btn:hover {
@@ -110,47 +138,80 @@
     padding: 20px;
     text-align: center;
     margin-bottom: 20px;
+    margin-left: 220px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  .footer {
+    background: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 25px 20px 20px 220px;
+    margin-top: 40px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .footer .footer-links {
+    margin-bottom: 10px;
+  }
+  .footer .footer-links a {
+    color: #b2ebf2;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .footer .footer-links a:hover {
+    color: #fff;
+    text-decoration: underline;
   }
 </style>
 </head>
 <body>
 <div class="sidebar">
   <h2>Nika</h2>
-  <a href="index.html">Home</a>
+  <a href="index.html" class="active">Home</a>
   <a href="catalog.html">Catalog</a>
   <a href="clothes.html">Clothes</a>
   <a href="shoes.html">Shoes</a>
-  
   <a href="about.html">About Us</a>
 </div>
 
 <div class="header">
   <h1>Welcome to nika</h1>
-  <p>Your one-stop shop for high-quality audio products!</p>
+  <p>Your one-stop shop for the latest fashion and shoes!</p>
 </div>
 
 <div class="promo-banner">
-  <h2>Special Offer: 20% off on all products!</h2>
-  <p>Use code: SOUND20 at checkout</p>
+  Special Offer: 20% off on all products! &nbsp; <span style="font-weight:normal;">Use code: <b>SOUND20</b> at checkout</span>
 </div>
 
 <div class="container">
   <h2>Featured Products</h2>
   <div class="featured-products">
     <div class="product-card">
-      <img src="https://via.placeholder.com/150?text=Stylish+Shirt" alt="Stylish Shirt" />
+      <img src="./images/shirt.jpg" alt="Stylish Shirt" />
       <div class="product-title">Stylish Shirt</div>
       <div class="product-price">$29.99</div>
       <a href="clothes.html" class="btn">View Product</a>
     </div>
     <div class="product-card">
-      <img src="https://via.placeholder.com/150?text=Nike+Air+Max" alt="Nike Air Max" />
+      <img src="./images/max.png" alt="Nike Air Max" />
       <div class="product-title">Nike Air Max</div>
       <div class="product-price">$120.00</div>
       <a href="shoes.html" class="btn">View Product</a>
     </div>
     <div class="product-card">
-      <img src="https://via.placeholder.com/150?text=Summer+Dress" alt="Summer Dress" />
+      <img src="./images/summer.jpg" alt="Summer Dress" />
       <div class="product-title">Summer Dress</div>
       <div class="product-price">$49.99</div>
       <a href="clothes.html" class="btn">View Product</a>
@@ -162,6 +223,17 @@
       <a href="shoes.html" class="btn">View Product</a>
     </div>
   </div>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="index.html">Home</a>|
+    <a href="catalog.html">Catalog</a>|
+    <a href="clothes.html">Clothes</a>|
+    <a href="shoes.html">Shoes</a>|
+    <a href="about.html">About Us</a>
+  </div>
+  &copy; 2025 Nika Online Shop. All rights reserved.
 </div>
 </body>
 </html>
