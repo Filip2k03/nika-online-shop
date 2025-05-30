@@ -42,6 +42,45 @@
     opacity: 0.95;
   }
 
+  .cart-icon {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    background: white;
+    color: var(--primary-color);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.7rem;
+    transition: background 0.2s;
+  }
+  .cart-icon:hover {
+    background: #e0f7fa;
+  }
+  .cart-count {
+    position: absolute;
+    top: 22px;
+    right: 32px;
+    background: #ff5252;
+    color: #fff;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid #fff;
+    z-index: 11;
+  }
+
   .container {
     margin-left: 220px;
     padding: 20px;
@@ -95,6 +134,7 @@
     color: white;
     transition: background-color 0.3s;
     margin-top: 10px;
+    cursor: pointer;
   }
 
   .btn:hover {
@@ -136,6 +176,10 @@
 <div class="header">
   <h1>Clothes Collection</h1>
   <p>Discover the latest trends in clothes!</p>
+  <div class="cart-icon" onclick="window.location.href='cart.html'">
+    🛒
+    <span class="cart-count" id="cart-count">0</span>
+  </div>
 </div>
 
 <div class="container">
@@ -144,20 +188,29 @@
       <img src="./images/shirt.jpg" alt="Stylish Shirt" />
       <div class="product-title">Stylish Shirt</div>
       <div class="product-price">$29.99</div>
-      <a href="clothes_product.html" class="btn">View Product</a>
+      <button class="btn" onclick="addToCart('Stylish Shirt', 29.99)">Add to Cart</button>
     </div>
     <div class="product-card">
       <img src="./images/summer.jpg" alt="Summer Dress" />
       <div class="product-title">Summer Dress</div>
       <div class="product-price">$49.99</div>
-      <a href="clothes_product.html" class="btn">View Product</a>
+      <button class="btn" onclick="addToCart('Summer Dress', 49.99)">Add to Cart</button>
     </div>
     <div class="product-card">
       <img src="./images/shirt.jpg" alt="Casual Pants" />
       <div class="product-title">Casual Pants</div>
       <div class="product-price">$39.99</div>
-      <a href="clothes_product.html" class="btn">View Product</a>
+      <button class="btn" onclick="addToCart('Casual Pants', 39.99)">Add to Cart</button>
     </div>
+    <div class="product-card">
+      <img src="./images/shirt.jpg" alt="Winter Jacket" />
+      <div class="product-title">Winter Jacket</div>
+      <div class="product-price">$89.99</div>
+      <button class="btn" onclick="addToCart('Winter Jacket', 89.99)">Add to Cart</button>
+    </div>
+  </div>
+  <div style="margin-top:30px;text-align:right;">
+    <a href="checkout.html" class="btn">Go to Checkout</a>
   </div>
 </div>
 
@@ -171,5 +224,14 @@
   </div>
   &copy; 2025 Nika Online Shop. All rights reserved.
 </div>
+<script>
+let cartCount = 0;
+function addToCart(title, price) {
+  cartCount++;
+  document.getElementById('cart-count').innerText = cartCount;
+  // Optionally, store cart in localStorage or send to backend
+  // For demo, just update the icon
+}
+</script>
 </body>
 </html>
