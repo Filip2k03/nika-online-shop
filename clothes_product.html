@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="style.css">
 <script>
 let cartCount = 0;
-
 function addToCart() {
   cartCount++;
   document.getElementById('cart-count').innerText = cartCount;
@@ -16,32 +15,38 @@ function addToCart() {
 </script>
 </head>
 <body>
-<div class="sidebar">
-<h2>Nika</h2>
-<a href="index.html">Home</a>
-<a href="clothes.html">Clothes</a>
-<a href="shoes.html">Shoes</a>
-
-<a href="about.html">About Us</a>
-<div class="cart-icon">
-  <img src="https://via.placeholder.com/24?text=🛒" alt="Cart" />
-  <a href="cart.html">Cart <span id="cart-count" class="cart-count">0</span></a>
-</div>
+<div class="header">
+  <h1>Stylish Shirt</h1>
+  <p>This stylish shirt is perfect for any occasion, made with high-quality fabric for comfort and durability.</p>
+  <div class="cart-icon" onclick="window.location.href='cart.html'">
+    🛒
+    <span class="cart-count" id="cart-count">0</span>
+  </div>
 </div>
 
 <div class="container">
-<h1>Stylish Shirt</h1>
-<div class="product-details">
-  <div class="product-image">
-    <img src="https://via.placeholder.com/400?text=Stylish+Shirt" alt="Stylish Shirt" />
-  </div>
-  <div class="product-info">
-    <div class="product-title">Stylish Shirt</div>
-    <div class="product-price">$29.99</div>
-    <p class="product-description">This stylish shirt is perfect for any occasion, made with high-quality fabric for comfort and durability.</p>
-    <button class="btn" onclick="addToCart()">Add to Cart</button>
+  <div class="product-details" style="display:flex;flex-wrap:wrap;gap:30px;align-items:center;">
+    <div class="product-image" style="flex:1 1 300px;text-align:center;">
+      <img src="https://via.placeholder.com/400?text=Stylish+Shirt" alt="Stylish Shirt" style="max-width:100%;height:auto;" />
+    </div>
+    <div class="product-info" style="flex:2 1 350px;">
+      <div class="product-title" style="font-size:2rem;font-weight:bold;">Stylish Shirt</div>
+      <div class="product-price" style="font-size:1.5rem;font-weight:bold;margin:10px 0;">$29.99</div>
+      <p class="product-description">This stylish shirt is perfect for any occasion, made with high-quality fabric for comfort and durability.</p>
+      <button class="btn" onclick="addToCart()">Add to Cart</button>
+    </div>
   </div>
 </div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="index.html">Home</a>|
+    <a href="catalog.html">Catalog</a>|
+    <a href="clothes.html">Clothes</a>|
+    <a href="shoes.html">Shoes</a>|
+    <a href="about.html">About Us</a>
+  </div>
+  &copy; 2025 Nika Online Shop. All rights reserved.
 </div>
 </body>
 </html>
